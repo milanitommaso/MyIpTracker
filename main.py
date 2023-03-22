@@ -1,6 +1,8 @@
 import json
 import public_ip as ip
 
+import notify_user
+
 def get_public_ip():
     public_ip = ip.get()
     return public_ip
@@ -27,6 +29,9 @@ def main():
         # Write the new IP to the data.json file
         with open('data.json', 'w') as data:
             data.write(json.dumps({'public_ip': new_ip}))
+
+        # Notify the user
+        notify_user.telegram_message(new_ip)
 
 
 if __name__ == '__main__':
