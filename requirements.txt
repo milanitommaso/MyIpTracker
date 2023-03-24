@@ -1,1 +1,4 @@
 public_ip==0.12
+python_telegram_bot==13.14
+requests==2.25.1
+telegram==0.0.1
